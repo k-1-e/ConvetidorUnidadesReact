@@ -16,26 +16,55 @@ export const Convertidor = () => {
     }
     //manejador de evento del boton 
     const handleCalcular = () => {
-    
+    //centimetros
         if (origen === 'cm' && destino === 'mt' ) {
             const result = convertir / 100
             setResultado(result)
         } 
+        else if (origen === 'cm' && destino === 'mm') {
+            const result = convertir * 10
+            setResultado(result)
+        }
+        else if (origen === 'cm' && destino === 'kl') {
+            const result = convertir / 100000
+            setResultado(result)
+        }
+//milometros
         else if(origen === 'mm' && destino === 'cm') {
             const result = convertir / 10.000
             setResultado(result)
         } else if (origen === 'mm' && destino === 'mt') {
-            const result = convertir / 1000.0
+            const result = convertir / 1000
             setResultado(result)
         } else if (origen === 'mm' && destino === 'km') {
             const result = convertir / 1000000
             setResultado(result)
         }
 
-        else if (origen === 'mt' && destino === 'cm') {
+        //metros
+        else if(origen === 'mt' && destino === 'cm') {
             const result = convertir * 100
             setResultado(result)
+        } else if (origen === 'mt' && destino === 'mm') {
+            const result = convertir * 1000
+            setResultado(result)
+        } else if (origen === 'mt' && destino === 'km') {
+            const result = convertir / 1000
+            setResultado(result)
         }
+
+        //kilometro
+        else if(origen === 'km' && destino === 'cm') {
+            const result = convertir * 100000
+            setResultado(result)
+        } else if (origen === 'km' && destino === 'mm') {
+            const result = convertir * 1000000
+            setResultado(result)
+        } else if (origen === 'km' && destino === 'mt') {
+            const result = convertir * 1000
+            setResultado(result)
+        }
+        
 
         
     }
